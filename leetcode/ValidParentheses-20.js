@@ -44,4 +44,23 @@
       return false 
   };
 
+
+const isValid3 = function(s) {
+    let arr = []
+    let map = {
+        '(' : ')',
+        '[' : ']',
+        '{' : '}'
+    }
+    for(let i=0; i<s.length; i++){
+        if(map[s[i]]){
+            arr.push(s[i])
+        }else if(arr.length === 0 || s[i]!== map[arr.pop()]){
+            return false
+        }
+    }
+    if(arr.length === 0) return true
+    return false
+  };
+
 console.log(isValid2('[[]]{{}}'))
