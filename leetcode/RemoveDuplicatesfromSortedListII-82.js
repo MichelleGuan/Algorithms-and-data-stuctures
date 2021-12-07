@@ -3,6 +3,7 @@ var deleteDuplicates = function(head) {
         return head
     }
     let pre = new ListNode(-1)
+    //creat a before state list and copy for change
     pre.next = head
     let cur = pre
     while(cur.next && cur.next.next){

@@ -9,6 +9,7 @@ var longestSubarray = function(nums, limit) {
     while(right < nums.length){
         while(minQue.length && minQue[minQue.length-1] > nums[right]){
             minQue.pop()
+            //aviod minStart over length
             if (minQue.length - 1 < minStart) {
                 minQue = []
                 minStart = 0
@@ -25,6 +26,7 @@ var longestSubarray = function(nums, limit) {
         }
         minQue.push(nums[right])
         maxQue.push(nums[right])
+        //we can't use shift since this will cost more effort by re-order all ele
         while(minQue.length && maxQue.length && left<=right && maxQue[maxStart]-minQue[minStart]>limit){
              if(minQue[minStart] === nums[left]){
                 minStart ++
