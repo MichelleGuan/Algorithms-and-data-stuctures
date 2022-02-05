@@ -2,10 +2,8 @@ var longestSubarray = function(nums, limit) {
     let minQue = []
     let maxQue = []
     let result = 0
-    let left = 0
-    let right = 0
-    let minStart =0
-    let maxStart = 0
+    let left = 0, right = 0
+    let minStart =0, maxStart = 0
     while(right < nums.length){
         while(minQue.length && minQue[minQue.length-1] > nums[right]){
             minQue.pop()
