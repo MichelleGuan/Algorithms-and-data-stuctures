@@ -27,6 +27,10 @@ int main(void)
     total(*arr,*arr +4);
     //printf("%f \n",(*arr)[1]);
     extend(2,2,arr);
+    int arr2[10];
+    for(size_t i = 0; i< 10; i++){
+        arr2[i] = 10;
+    }
     return 0;
 }
 void extend( int x, int y,float ar[x][y]){
