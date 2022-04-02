@@ -12,7 +12,9 @@
  };
  var coreGetGold = function( grid, rows, cols, row, col) {
      let gold = 0
-     if(col < 0 || row < 0 || col == cols || row == rows || grid[row][col] == 0) return 0
+     if(col < 0 || row < 0 || col == cols || row == rows || grid[row][col] == 0) {
+        return 0
+     }
      const cur = grid[row][col]
      grid[row][col] = 0
      for(const dir of DIRS){
@@ -21,3 +23,5 @@
      grid[row][col] = cur
      return  gold + cur
  }
+
+ 
